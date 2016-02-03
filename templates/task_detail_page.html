@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="task-detail" data-task-id="{{ task.id }}">
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.desc }}</p>
+    </div>
+{% endblock content %}

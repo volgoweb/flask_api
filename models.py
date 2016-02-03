@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from app import db
+from application import db
 
 
 class Task(db.Model):
@@ -7,5 +7,10 @@ class Task(db.Model):
     title = db.Column(db.String(255), nullable=False)
     desc = db.Column(db.Text)
 
-    def __repr__(self):
+    def __init__(self, title, desc=None):
+        self.title = title
+        if desc:
+            self.desc = desc
+
+    def __repr(self):
         return u'#{id} {title}'.format(id=self.id, title=self.title)
